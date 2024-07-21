@@ -1,3 +1,6 @@
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using StoreView.BookStoreBasic;
+
 namespace StoreView
 {
     public class Program
@@ -8,6 +11,8 @@ namespace StoreView
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddSingleton<IBookRepository,BookRepository>();
 
             var app = builder.Build();
 
