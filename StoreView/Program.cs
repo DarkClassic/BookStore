@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using StoreView.BasicAudioBook;
 using StoreView.BookStoreBasic;
 
 namespace StoreView
@@ -13,6 +14,8 @@ namespace StoreView
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddSingleton<IBookRepository,BookRepository>();
+
+            builder.Services.AddSingleton<IRepositoryAudioBook, RepositoryAudioBook>();
 
             var app = builder.Build();
 
